@@ -8,13 +8,12 @@ def Simpletoggle():
         toggle_button.config(text='Entry')
 
 def showJar():
-    jar_val = jar.get_jar(ent_jar.get())
+    jar_val = list(jar.get_jar(ent_jar.get()))
     lbl_list_jar_contents.config(text=jar_val)
     
-
 def add():
-    jar_val = ent_jar.get()
-    val_val = ent_val.get()
+    jar_val = str(ent_jar.get())
+    val_val = str(ent_val.get())
     if toggle_button.config('text')[-1] == 'Jar':
         jar.add_jar(jar_val)
         jar.add_entry(jar_val, val_val)
