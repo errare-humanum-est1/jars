@@ -15,6 +15,8 @@ class JarManager():
         return self.content[jar]
     
     def take_from_jar(self, jar):
+        if not self.content[jar]:
+            return None
         rdm = random.choice(self.content[jar])
         self.remove_entry(jar, rdm)
         return rdm
